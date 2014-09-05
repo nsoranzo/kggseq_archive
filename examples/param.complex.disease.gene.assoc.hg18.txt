@@ -1,0 +1,20 @@
+--buildver hg18
+
+--assoc-file  examples/complex.gene.assoc.hg18.out
+
+--excel
+--out kggseqtest3.cd
+
+--filter-model association  #  association
+--p-value-cutoff 0.00005 #only effective for 'association' filter-model
+
+--genome-anot 
+--candi-list HLA-DPA1,HLA-DPB1
+--ppi-anno string
+--ppi-depth 1
+--pathway-anno cura
+--pubmed-mesh Crohn's+disease,Inflammatory+bowel+disease
+
+--qqplot #only effective for 'association' filter-model
+
+

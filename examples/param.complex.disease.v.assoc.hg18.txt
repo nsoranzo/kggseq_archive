@@ -1,0 +1,25 @@
+
+--buildver hg18
+
+--v-assoc-file  examples/complex.disease.v.assoc.hg18.out
+
+--excel
+--out kggseqtest3.cd
+
+--min-obsa 10  ##qc
+--min-obsu 10  ##qc
+
+--filter-model association  # case-unique, control-unique, association or no
+--p-value-cutoff 0.1 #only effective for 'association' filter-model
+--db-gene refgene \
+--gene-feature-in 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14
+--db-score dbnsfp
+
+--genome-anot 
+--candi-list HLA-DPA1,HLA-DPB1
+--ppi-anno string
+--ppi-depth 1
+--pathway-anno cura
+--pubmed-mesh Crohn's+disease,Inflammatory+bowel+disease
+
+--qqplot #only effective for 'association' filter-model

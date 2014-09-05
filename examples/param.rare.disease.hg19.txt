@@ -1,0 +1,47 @@
+#one argument per line 
+#Enviromental setting
+--buildver hg19 \ 
+--resource ./resources \  
+
+#Specify the input files
+--vcf-file examples/rare.disease.hg19.vcf \ 
+--ped-file examples/rare.disease.ped.txt  \ 
+--composite-subject-id
+
+#Output setting
+--out ./test0808_1 \ 
+--excel \ 
+--o-seattleseq \  
+--o-vcf \  
+#--o-flanking-seq 50 \ 
+ 
+#QC
+--gty-qual 10 \ 
+--gty-dp 4 \  
+--gty-af-ref 0.05 \  
+--gty-af-alt 0.25 \  
+--vcf-filter-in PASS \  
+--seq-qual 50 \ 
+--seq-mq 20 \ 
+--seq-sb 0 \ 
+--min-obsa 1 \ 
+--min-obsu 1 \ 
+
+ #Filtering and Prioritization 
+--genotype-filter 3 \ \ 
+--ibs-case-filter 1000 \ 
+--db-gene refgene \ 
+--gene-feature-in 0,1,2,3,4,5 \ 
+--db-filter hg19_1kg201204,hg19_dbsnp137,hg19_ESP6500AA,hg19_ESP6500EA \ 
+--rare-allele-freq 0.006 \ 
+--db-score dbnsfp \ 
+--filter-nondisease-variant \
+--regions-out chrX,chrY \ 
+
+#Annotation
+--genome-anot \  
+--candi-list ATXN1,ATXN2,ATXN8OS,ATXN8,ATXN10,TTBK2 \ 
+--pathway-annot cura \  
+--ppi-annot string \
+--ppi-depth 1 \  
+--pubmed-mining Spinocerebellar+ataxia \ 

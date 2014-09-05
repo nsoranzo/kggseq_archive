@@ -1,0 +1,50 @@
+#one argument per line 
+#Enviromental setting
+--buildver hg18 \ 
+--resource ./resources \  
+
+#Specify the input files
+--vcf-file  examples/complex.disease.vcf.hg18.vcf \ 
+--ped-file examples/complex.disease.ped.txt \ 
+--composite-subject-id
+
+#Output setting
+--excel \
+--out kggseqtest0808_2 \
+--o-vcf \  
+--o-plink-ped \
+--o-ked \
+
+#QC
+--gty-qual 10 \ 
+--gty-dp 4 \  
+--gty-af-ref 0.05 \  
+--gty-af-alt 0.25 \  
+--vcf-filter-in PASS \  
+--seq-qual 50 \ 
+--seq-mq 20 \
+--seq-sb 0 \
+--min-obsa 1 \
+--min-obsu 1 \
+--min-obs 3  \
+
+#Filtering and Prioritization 
+--filter-model case-unique \ 
+--db-gene refgene \ 
+--gene-feature-in 0,1,2,3,4,5,6,7,8,9,10 \ 
+--db-filter hg18_1kgasn2010,hg18_1kgeur2010,hg18_dbsnp130,hg18_dbsnp129 \ 
+--allele-freq 0.01 0.99 \ 
+--db-score dbnsfp \ 
+--ignore-indel \ 
+
+#Annotation
+--genome-anot \  
+--candi-list HLA-DPA1,HLA-DPB1 \
+--pathway-annot cura \  
+--ppi-annot string \ 
+--ppi-depth 1 \  
+--pubmed-mining Crohn's+disease,Inflammatory+bowel+disease \ 
+
+#Plotting
+#--mafplot \  
+
